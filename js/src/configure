@@ -1582,9 +1582,9 @@ iPhoneOS|iPhoneSimulator)
     LDFLAGS="-isysroot $ios_sdk_root -arch $ios_arch -v"
 
     if test "$ios_target" == "iPhoneSimulator" ; then
-        CFLAGS="-isysroot $ios_sdk_root -arch $ios_arch -mios-simulator-version-min=$ios_deploy_version -I$ios_sdk_root/usr/include -pipe -Wno-implicit-int -Wno-return-type"
+        CFLAGS="-isysroot $ios_sdk_root -arch $ios_arch -mios-simulator-version-min=$ios_deploy_version -I$ios_sdk_root/usr/include -pipe -Wno-implicit-int -Wno-return-type -fembed-bitcode"
     else
-        CFLAGS="-isysroot $ios_sdk_root -arch $ios_arch -miphoneos-version-min=$ios_deploy_version -I$ios_sdk_root/usr/include -pipe -Wno-implicit-int -Wno-return-type"
+        CFLAGS="-isysroot $ios_sdk_root -arch $ios_arch -miphoneos-version-min=$ios_deploy_version -I$ios_sdk_root/usr/include -pipe -Wno-implicit-int -Wno-return-type -fembed-bitcode"
     fi
     
     CXXFLAGS="$CFLAGS"

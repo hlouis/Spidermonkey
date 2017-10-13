@@ -3905,24 +3905,24 @@ RedirectOutput(JSContext *cx, unsigned argc, jsval *vp)
 static bool
 System(JSContext *cx, unsigned argc, jsval *vp)
 {
-    CallArgs args = CallArgsFromVp(argc, vp);
+    // CallArgs args = CallArgsFromVp(argc, vp);
 
-    if (args.length() == 0) {
-        JS_ReportErrorNumber(cx, my_GetErrorMessage, nullptr, JSSMSG_INVALID_ARGS,
-                             "system");
-        return false;
-    }
+    // if (args.length() == 0) {
+    //     JS_ReportErrorNumber(cx, my_GetErrorMessage, nullptr, JSSMSG_INVALID_ARGS,
+    //                          "system");
+    //     return false;
+    // }
 
-    JSString *str = JS::ToString(cx, args[0]);
-    if (!str)
-        return false;
+    // JSString *str = JS::ToString(cx, args[0]);
+    // if (!str)
+    //     return false;
 
-    JSAutoByteString command(cx, str);
-    if (!command)
-        return false;
+    // JSAutoByteString command(cx, str);
+    // if (!command)
+    //     return false;
 
-    int result = system(command.ptr());
-    args.rval().setInt32(result);
+    // int result = system(command.ptr());
+    // args.rval().setInt32(result);
     return true;
 }
 
